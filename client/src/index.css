@@ -1,0 +1,678 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+.grid {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to right, #80808012 1px, transparent 1px),
+    linear-gradient(to bottom, #80808012 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+/* NaviationBar */
+.navLink{
+  font-size: 20px;
+  font-weight: 600;
+  transition: all 0.5s;
+  position: relative;
+  margin-left: 90px;
+  gap: 15px;
+  border: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+
+}
+.navLink .nav-link:hover {
+  color: rgb(203, 135, 255);
+  cursor: pointer; 
+  transition: all 0.5s;
+  background-color: transparent !important;
+}
+.navLink .dropdown-item:hover {
+  color: rgb(203, 135, 255);
+  background-color: transparent !important;
+  cursor: pointer;
+}
+.no-hover:hover {
+  color: inherit; /* Keep the original color */
+  cursor: default; /* Default cursor */
+  background-color: transparent !important;
+}
+.logo{
+  height: 60px;
+  cursor: pointer;
+}
+
+/* Home */
+.sideImage{
+  width: 100%;
+  height: auto;
+}
+.sideText{
+  text-align: center;
+}
+.sideText h1 {
+  justify-content: center;
+  font-size: 2.7rem;
+  font-weight: 700;
+  gap: 1rem;
+  font-family: Poppins, "sans-serif";
+  margin: 150px 90px 10px 90px;
+}
+@media screen and (max-width: 770px) {
+  .sideText h1 {
+    font-size: 2rem;
+    margin: 150px 30px 10px 30px;
+  }
+}
+
+.sideText p{
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: grey;
+  text-align: justify;
+  margin: 30px 165px 10px 165px;
+}
+@media screen and (max-width: 770px) {
+  .sideText p{
+    font-size: 0.8rem;
+    margin: 20px 30px 10px 30px;
+  }
+}
+
+
+/* Services */
+/* .part2{
+  background-color: #faf5ff;
+} */
+.part2 h1{
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 650;
+  gap: 1rem;
+  padding: 20px;
+}
+.part2 p{
+  font-size: 0.8rem;
+  color: rgb(152, 151, 151);
+  text-align: justify;
+}
+.serviceBox{
+  background-color: white;
+  margin: 0 auto; 
+  margin-bottom: 80px;
+  max-width: 80%;
+  height: auto;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+.serviceBox img{
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+.serviceBox a{
+  color: black;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+.serviceBox:hover a{
+  color: rgb(189, 120, 242);
+  font-size: 0.9rem;
+  transition: all 0.8s;
+  margin-left: 20px;
+}
+.serviceBox:hover img {
+  transform: scale(1.1); 
+  transition: all 0.8s;
+}
+
+
+/* Client */
+.client{
+  background-color: #f3e8ff;
+}
+.client img{
+  width: 320px;
+  height: 90px;
+  margin: 20px;
+  margin-bottom: 70px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* TIMELINE - 
+Work */
+.work h1{
+  /* color: black; */
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.work h2{
+  font-weight: 500;
+}
+.work p{
+  color: rgb(67, 66, 66);
+}
+.timeline{
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+}
+.container1{
+  padding: 10px 50px;
+  position: relative;
+  width: 50%;
+  /* background: rgba(0, 0, 0, 0.3); */
+  animation: movedown 1s linear forwards;
+  opacity: 0;
+}
+@keyframes movedown{
+  0%{
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.container1:nth-child(1){
+  animation-delay: 0s;
+}
+.container1:nth-child(2){
+  animation-delay: 1s;
+}
+.container1:nth-child(3){
+  animation-delay: 2s;
+}
+
+
+.text-box{
+  padding: 20px 30px;
+  background: #f9e5ff;
+  position: relative;
+  border-radius: 6px;
+  font-size: 15px;
+}
+.left-container{
+  left:0;
+}
+.right-container{
+  left: 48%;
+}
+.container1 img{
+  position: absolute;
+  width: 50px;
+  border-radius: 50%;
+  right: -30px;
+  top:10px;
+  z-index:10;
+}
+.right-container img{
+  top: 36px;
+  left: -15px;
+}
+.left-container img{
+  top:40px;
+  right: -20px;
+}
+
+.timeline::after{
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  background: black;
+  top: 0;
+  left: 51%;
+  margin-left: -20px;
+  z-index: -1;
+  animation: moveline 4s linear forwards;
+}
+@keyframes moveline {
+  0%{
+    height: 0;
+  }
+  100%{
+    height: 100%;
+  }
+}
+
+
+.left-container-arrow{
+  height: 0;
+  width: 0;
+  position: absolute;
+  top:28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #f9e5ff;
+  right: -14px;
+}
+.right-container-arrow{
+  height: 0;
+  width: 0;
+  position: absolute;
+  top:28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid #f9e5ff;
+  left: -14px;
+}
+
+@media screen and (max-width: 600px){
+  .timeline{
+    margin: 50px auto;
+  }
+  .timeline::after{
+    left:55px;
+  }
+  .container1{
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 25px;
+  }
+  .text-box{
+    font-size: 13px;
+  }
+  .text-box p{
+    margin-bottom: 10px;
+  }
+  .right-container{
+    left: 0;
+  }
+  .left-container img, .right-container img{
+    left:10px;
+  }
+  .left-container-arrow, .right-container-arrow{
+    border-radius:15px solid #f9e5ff;
+    border-left: 0;
+    left:-14px;
+    right: 15px;
+  }
+}
+
+/* .work{
+  padding: 10px;
+}
+.work h1{
+  margin:70px 0px 0px 0px;
+  font-weight: 700;
+}
+.work p{
+  font-size: 0.9rem;
+  text-align: justify;
+}
+.line{
+  width: 100%;
+  margin: 0px 0px 20px 0px;
+  border:4px solid rgb(163, 54, 163);
+}
+.para{
+  margin-top: 120px;
+}
+ */
+
+/* Service Navigation */
+.service-section{
+  background: rgb(2,0,36);
+  background: linear-gradient(40deg, rgba(2,0,36,1) 0%, rgba(1,1,55,1) 53%, rgba(3,169,202,1) 100%);
+  width: 100%;
+  height: 200px;
+}
+.service-section h1{
+  color: white;
+  font-weight: 800;
+  text-align: center;
+  padding: 70px 0;
+  letter-spacing: 4px;
+}
+.service-side p{
+  text-align: justify;
+  font-size: 0.9rem;
+  color: grey;
+  padding: 30px;
+}
+.service-side h3{
+  margin-top: 100px;
+  padding: 30px;
+}
+
+/* Career Page */
+/* Career Navigation */
+.career-nav{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.career-btn {
+  font-size: 20px;
+  font-weight: 600;
+  transition: all 0.5s;
+  position: relative;
+  margin-left: 200px;
+  gap:20px;
+}
+.jobposts{
+  margin: 30px 0px 20px 0px;
+  padding: 10px 25px 10px 25px;
+  width: 70%;
+  border-radius: 4px;
+}
+.jobdetail-post{
+  height: auto;
+  margin: 10px 0px 20px 0px;
+  padding: 10px;
+  border-radius: 0px;
+}
+.jobdetail-post p{
+  /* line-height: 1; */
+  letter-spacing: 0.4px;
+  font-size: 12px;
+}
+.description{
+  margin: 10px 0px 10px 0px;
+  padding: 10px;
+  font-size: 13px;
+}
+
+/* Application Form */
+.application{
+  border: 1px solid rgb(90, 8, 126);
+  background-color: #f3e8ff;
+  margin: 10px 0px 10px 0px ;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+/* Footer */
+
+.footer{
+  height: auto;
+  background-color: #faf5ff;
+  padding: 60px 30px 20px 30px;
+}
+.footer p{ 
+  margin: 10px 0px 0px 5px;
+  font-size: 13px;
+  color: grey;
+  text-align: justify;
+}
+.footer a{
+  z-index: 10;
+  text-decoration: none;
+  font-size: 13px;
+  color: grey;
+}
+
+/* About */
+.about{
+  margin: 10px;
+  padding: 30px 0px 30px 0px;
+}
+.about h3{
+  font-weight: 700;
+  letter-spacing: 0.9;
+}
+.about h2{
+  font-weight: 700;
+  font-size: 40px;
+  color: purple;
+}
+
+
+.vision{
+  padding: 20px;
+  background-color: #faf6fe !important;
+  margin-bottom: 20px;
+}
+.vision h6{
+  font-family: Poppins, "sans-serif";
+  font-weight: 700;
+  font-size: 30px;
+  text-align: center;
+}
+.vision p{
+  text-align: justify;
+  font-size: 14px;
+  padding: 10px 0px 10px 0px;
+}
+.vision img{
+  height: 300px;
+  width: 500px;
+  padding: 10px;
+}
+
+
+
+
+/* Team */
+.team{
+  margin: 90px 0px 90px 0px;
+}
+.team h1{
+
+  font-size: 70px;
+  margin: 20px;
+  font-weight: 800;
+  font-family: Poppins, "sans-serif";
+}
+
+.teamImg{
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0px 20px 0px;
+  /* border: 2px solid rgb(84, 81, 84); */
+}
+.teamBox p{
+  color:grey;
+  font-size: 12px;
+  font-weight: 500;
+}
+.teamBox{
+  margin: 10px 0px 10px 0px;
+  padding: 10px;
+  width: 300px;
+}
+.teamBox:hover{
+  background-color: rgb(253, 235, 255);
+  transition: all 0.7s;
+}
+
+
+/* Contact */
+.headContact{
+  font-weight: 700;
+  font-size: 52px;
+  color: white;
+  margin: 30px;
+}
+.contact h2{
+  text-align: center;
+  margin: 50px;
+  font-weight: 700;
+  font-size: 40px;
+}
+.contact h6{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  color: rgb(151, 33, 151);
+}
+.contact-form{
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px 0px 50px 0px;
+}
+.contact img{
+  margin: 20px 0px 20px 0px;
+}
+
+.inputs {
+  width: 80%;
+  height: 35px;
+  border: none;
+  background-color: rgb(245, 242, 242);
+  padding: 0.6rem 1.2rem;
+  color: #000000;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adding shadow */
+  transition: box-shadow 0.3s ease-in-out; 
+  margin: 5px 0px 10px 10px;
+}
+.label{
+  margin: 5px 0px 2px 11px;
+}
+
+/* Website Development */
+.web-content h2{
+  margin: 35px;
+  text-align: center;
+  font-weight: 600;
+  font-family: Poppins, "sans-serif";
+}
+.web-content p{
+  font-size: 16px;
+  text-align: center;
+  text-align: justify;
+  margin: 10px 0px 10px 0px;
+  font-family: Georgia, serif;
+}
+.web-content h4{
+  margin: 20px 0px 20px 0px;
+  font-weight: 600;
+}
+.web-content img{
+  height: 450px;
+  width: 100%;
+  margin-bottom: 40px;
+  padding: 20px;
+}
+
+
+
+/* Let's talk about project */
+.talk{
+  margin: 40px 10px 40px 10px;
+  overflow: hidden;
+}
+.talk img{
+  height: 90%;
+  width:90%;
+}
+.talk h1{
+  padding: 25px;
+  font-weight: 700;
+  font-size: 60px;
+}
+.talk p{
+  padding: 25px;
+  font-size: 17px;
+}
+
+
+/* Privacy Policy */
+.policy h3{
+  margin: 40px 0px 10px 0px;
+  font-weight: 700;
+  font-size: 40px;
+  /* text-align: center; */
+}
+
+.policy p{
+  font-size: 16px;
+  text-align: center;
+  text-align: justify;
+  margin: 20px 0px 10px 0px;
+  font-family: Georgia, serif;
+}
+.pricing h2{
+  margin: 30px;
+  font-size: 45px;
+  font-weight: 700;
+  letter-spacing: 0.8;
+  text-align: center;
+  font-family: Poppins, "sans-serif";
+}
+.pricing h6{
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: 20px;
+}
+.pricingBox{
+  width: 320px;
+  height: 650px;
+  margin: 30px 0px 30px 0px;
+}
+.price-content h4{
+  padding: 16px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 28px;
+}
+.priceTop{
+  width: 100%;
+  height: 10px;
+  background-color: palevioletred;
+}
+.price-content h1{
+  font-size: 40px;
+  font-weight: 700;
+  /* padding: 10px 25px 10px 25px; */
+}
+.price-content p{
+  color: grey;
+  font-size: 15px;
+  /* padding: 0px 25px 10px 25px; */
+}
+.features{
+  display: flex;
+  align-items: center;
+  gap: 0px;
+}
+.features p{
+  padding: 0px 0px 0px 0px;
+  margin: 0;
+}
+
+.price-content li{
+  margin: 0px 0px 0px 0px;
+  color: rgb(88, 87, 87);
+  font-size: 15px;
+}
+.price-btn{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 30px;
+}
+.points li {
+  display: flex;
+  align-items: center;
+}
+
+.icon-text {
+  display: flex;
+  align-items: center;
+}
+
+.icon-text p {
+  margin: 3px 0px 1px 10px; 
+}
